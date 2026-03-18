@@ -25,9 +25,9 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
-      // "@/*": ["./src/*"],
-      "&/*": ["./chadcn/*"]
+      "@/*": ["./src/*"],
+      "#/*": ["./chadcn/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "chadcn"]
 }

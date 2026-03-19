@@ -7,5 +7,5 @@ node_modules/
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
-# chad/components/ui/
-# chad/lib/
+chadcn/components/ui/
+chadcn/lib/

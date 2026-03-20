@@ -7,11 +7,16 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "test": "vitest",
     "test:only": "vitest run",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run lint && npm run format:check && npm run test:only",
+    "prepare": "husky"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.8",
@@ -47,6 +52,7 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-react-x": "^2.13.0",
     "globals": "^17.4.0",
+    "husky": "^9.1.7",
     "jsdom": "^29.0.0",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
@@ -54,5 +60,17 @@
     "typescript-eslint": "^8.56.1",
     "vite": "^8.0.1",
     "vitest": "^4.1.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --check"
+    ],
+    "src/**/*.{ts,tsx}": [
+      "vitest related --run"
+    ],
+    "*.{css,md,json,yml,yaml}": [
+      "prettier --check"
+    ]
   }
 }

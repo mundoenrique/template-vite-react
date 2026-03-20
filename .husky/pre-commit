@@ -1,0 +1,8 @@
+echo ""
+echo ">>> HUSKY PRE-COMMIT RUNNING (ESLint + Prettier + tests related) <<<"
+echo "If your commit fails, run 'npx lint-staged' or 'npm run lint' in the terminal for detailed errors."
+echo ""
+
+npx lint-staged
+
+echo "Pre-commit: validations completed."

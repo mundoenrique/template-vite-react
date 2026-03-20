@@ -23,7 +23,7 @@ function App() {
           <h1 className="mb-2 text-3xl font-bold">Get started</h1>
           <p className="text-gray-500">
             Edit <code className="rounded bg-gray-100 px-1">src/App.tsx</code> and save to test{' '}
-            <code className="rounded bg-gray-100 px-1">HMR</code>
+            <code className="rounded bg-gray-100 px-1">HMR.</code>
           </p>
         </div>
         <Button

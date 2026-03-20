@@ -14,10 +14,6 @@ export default defineConfig([
     extends: [js.configs.recommended, tseslint.configs.recommended],
     languageOptions: {
       ecmaVersion: 2023,
-      parserOptions: {
-        project: ['./tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
     },
     rules: {
       curly: ['error', 'all'],
@@ -26,13 +22,29 @@ export default defineConfig([
     },
   },
   {
-    files: ['eslint.config.js', 'vite.config.ts'],
+    files: ['vite.config.ts'],
+    languageOptions: {
+      globals: globals.node,
+      parserOptions: {
+        project: ['./tsconfig.node.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+  {
+    files: ['eslint.config.js'],
     languageOptions: {
       globals: globals.node,
       sourceType: 'module',
     },
-    rules: {
-      'no-console': 'off',
+  },
+  {
+    files: ['./src/**/*.{ts,tsx}'],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
   },
   {
@@ -43,16 +55,17 @@ export default defineConfig([
       tseslint.configs.recommendedTypeChecked,
       tseslint.configs.strictTypeChecked,
       reactX.configs.recommended,
-      reactX.configs.recommended.typescript,
+      reactX.configs['recommended-typescript'],
       reactDom.configs.recommended,
-      reactDom.configs.recommended.typescript,
-      importPlugin.configs.recommended,
     ],
     languageOptions: {
       globals: {
         ...globals.browser,
         ...globals.jest,
       },
+    },
+    plugins: {
+      import: importPlugin,
     },
     rules: {
       curly: ['off', 'all'],

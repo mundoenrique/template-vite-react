@@ -14,6 +14,6 @@ describe('main', () => {
   });
 
   test('Should ', () => {
-    expect(true).toBe(true);
+    expect(false).toBe(false);
   });
 });

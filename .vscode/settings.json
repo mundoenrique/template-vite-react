@@ -1,0 +1,22 @@
+{
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": "always" },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": false,
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.bracketPairsHorizontal": "active",
+  "editor.largeFileOptimizations": false,
+  "editor.renderWhitespace": "all",
+  "files.eol": "\n",
+  "prettier.bracketSameLine": false,
+  "prettier.jsxSingleQuote": false,
+  "prettier.printWidth": 120,
+  "prettier.semi": true,
+  "prettier.singleAttributePerLine": false,
+  "prettier.singleQuote": true,
+  "prettier.useEditorConfig": true
+}

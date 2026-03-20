@@ -73,3 +73,7 @@ export default defineConfig([
   },
 ]);
 ```
+
+```
+npm install --save-dev @testing-library/react @testing-library/dom vitest jsdom
+```

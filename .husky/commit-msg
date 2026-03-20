@@ -1,0 +1,8 @@
+echo ""
+echo ">>> HUSKY COMMIT-MSG RUNNING"
+echo "Allowed types: feat, fix, docs, style, refactor, perf, test, chore, ci, build"
+echo "If your commit MSG fails check allowed commit types in commitlint.config.mjs"
+echo "   (Located at the root of the repository)"
+echo ""
+
+npx --no -- commitlint --edit "$1"

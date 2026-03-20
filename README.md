@@ -167,6 +167,42 @@ npx lint-staged
 echo "Pre-commit: validations completed."
 ```
 
+---
+
+## Convención de mensajes de commit (Commit Message Convention)
+
+Este proyecto utiliza commitlint y Husky para asegurar mensajes de commit claros y consistentes.
+
+**Tipos permitidos:** feat, fix, docs, style, refactor, perf, test, chore, ci, build
+
+**Reglas principales:**
+
+- El tipo y el scope son obligatorios. El scope debe estar en minúsculas (3-20 caracteres).
+- El subject debe tener al menos 6 caracteres, no puede estar vacío, no debe iniciar en mayúscula ni terminar en punto.
+- El header (línea principal) no debe exceder 100 caracteres.
+- El body y el footer deben tener mínimo 10 caracteres, terminar en punto y no exceder 100 caracteres por línea.
+
+Para más detalles revisa el archivo `commitlint.config.mjs` en la raíz del repositorio.
+
+**Ejemplo válido:**
+
+```
+feat(api): agregar autenticación de usuarios
+
+Agrega endpoint para autenticación de usuarios.
+Incluye validación de tokens y pruebas unitarias.
+```
+
+**Ejemplo inválido:**
+
+```
+Fix: Login error.
+
+Arregla bug.
+```
+
+(Motivo: tipo no permitido, scope en mayúscula, subject muy corto, termina en punto, body muy corto.)
+
 ### Vitest
 
 - Framework de testing rápido y moderno.

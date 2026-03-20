@@ -39,15 +39,6 @@ export default defineConfig([
     },
   },
   {
-    files: ['./src/**/*.{ts,tsx}'],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-  },
-  {
     files: ['**/*.{ts,tsx, {test,spec}.{ts,tsx}}'],
     extends: [
       reactHooks.configs.flat.recommended,
@@ -62,6 +53,10 @@ export default defineConfig([
       globals: {
         ...globals.browser,
         ...globals.jest,
+      },
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
       },
     },
     plugins: {

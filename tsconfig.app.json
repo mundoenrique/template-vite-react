@@ -29,5 +29,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "chadcn"]
+  "include": ["src", "chadcn", "__tests__"]
 }

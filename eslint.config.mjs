@@ -64,6 +64,7 @@ export default defineConfig([
     },
     rules: {
       curly: ['off', 'all'],
+      'no-console': ['error', { allow: ['warn', 'error'] }],
       '@typescript-eslint/no-floating-promises': 'error',
       '@typescript-eslint/no-misused-promises': 'error',
       '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],

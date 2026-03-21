@@ -5,14 +5,15 @@ import type { URLSearchParamsInit } from 'react-router';
 export function useQueryParams(defaultInit?: URLSearchParamsInit) {
   const [searchParams, setSearchParams] = useSearchParams(defaultInit);
 
-  const getQueryParam = (paramKey: string, defaultValue: string) => {
+  const getQueryParam = (paramKey: string, defaultValue?: string) => {
     const paramValue = searchParams.get(paramKey);
 
     return paramValue ?? defaultValue;
   };
 
-  const getNumberQueryParam = (paramKey: string, defaultValue: number) => {
-    const paramValue = getQueryParam(paramKey, String(defaultValue));
+  const getNumberQueryParam = (paramKey: string, defaultValue?: number) => {
+    const defaultParamValue = defaultValue === undefined ? undefined : String(defaultValue);
+    const paramValue = getQueryParam(paramKey, defaultParamValue);
     const parsed = Number(paramValue);
 
     if (!Number.isFinite(parsed) || parsed <= 0) {

@@ -35,11 +35,13 @@ export function useQueryParams(defaultInit?: URLSearchParamsInit) {
     });
   };
 
-  const deleteQueryParam = (paramKey: string) => {
+  const deleteQueryParam = (paramKeys: string[]) => {
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev);
 
-      next.delete(paramKey);
+      paramKeys.forEach((key) => {
+        next.delete(key);
+      });
 
       return next;
     });

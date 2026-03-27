@@ -107,7 +107,7 @@ export function useQueryParams(defaultInit?: URLSearchParamsInit) {
    * @param {Record<string, string | number>} params - An object where keys are the parameter names and values are the values to set in the URL. Values will be converted to strings.
    * @returns {void}
    * @example
-   * setKeepingParams ({ page: 2, search: 'test' });
+   * setParamsMerge ({ page: 2, search: 'test' });
    * // Updates the URL to include ?page=2&search=test
    */
   /**
@@ -128,7 +128,7 @@ export function useQueryParams(defaultInit?: URLSearchParamsInit) {
    * @param paramsIn - An object where keys are the parameter names and values are the values to set in the URL. Values will be converted to strings.
    * @returns {void}
    * @example
-   * setSearchParams({ page: 2, search: 'test' });
+   * setParamsReplace({ page: 2, search: 'test' });
    * // Updates the URL to include ?page=2&search=test, removing any other existing query parameters
    */
   /**
@@ -162,8 +162,44 @@ export function useQueryParams(defaultInit?: URLSearchParamsInit) {
     });
   };
 
+  /**
+   * Retrieves a boolean query parameter from the URL.
+   * Accepts 'true', '1' as true; 'false', '0' as false; returns null if not present or invalid.
+   * @param {string} key - The query parameter name.
+   * @returns {boolean | null}
+   * @example
+   * // URL: ?active=true
+   * getBoolParam('active'); // true
+   * // URL: ?active=0
+   * getBoolParam('active'); // false
+   */
+  const getBoolParam = (key: string): boolean | null => {
+    const value = searchParams.get(key);
+    if (value === null || value.trim() === '') return null;
+    if (value === 'true' || value === '1') return true;
+    if (value === 'false' || value === '0') return false;
+
+    return null;
+  };
+
+  /**
+   * Retrieves an array query parameter from the URL, splitting by comma.
+   * Returns an empty array if not present or empty.
+   * @param {string} key - The query parameter name.
+   * @returns {string[]}
+   * @example
+   * // URL: ?tags=react,js,frontend
+   * getArrayParam('tags'); // ['react', 'js', 'frontend']
+   */
+  const getArrayParam = (key: string): string[] => {
+    const value = searchParams.get(key);
+    return value ? value.split(',').filter(Boolean) : [];
+  };
+
   return {
     deleteQueryParams,
+    getArrayParam,
+    getBoolParam,
     getNumParams,
     getNumParamsWithDefaults,
     getStrParams,

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router';
 
-import { Badge } from '#/components/ui/badge';
-import { Button } from '#/components/ui/button';
-import { Card } from '#/components/ui/card';
-import { Separator } from '#/components/ui/separator';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '#/components/ui/tabs';
+import { Badge } from '@shadcn/components/ui/badge';
+import { Button } from '@shadcn/components/ui/button';
+import { Card } from '@shadcn/components/ui/card';
+import { Separator } from '@shadcn/components/ui/separator';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shadcn/components/ui/tabs';
 
 import heroImg from '../assets/hero.png';
 import reactLogo from '../assets/react.svg';

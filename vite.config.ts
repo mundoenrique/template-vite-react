@@ -10,8 +10,10 @@ export default defineConfig({
   plugins: [react(), babel({ presets: [reactCompilerPreset()] }), tailwindcss()],
   resolve: {
     alias: {
-      '#': path.resolve(__dirname, './chadcn'),
       '@': path.resolve(__dirname, './src'),
+      '@shadcn': path.resolve(__dirname, './chadcn'),
+      '@tests': path.resolve(__dirname, './__tests__'),
+      '%': path.resolve(__dirname, './public'),
     },
   },
   test: {

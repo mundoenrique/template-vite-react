@@ -79,7 +79,7 @@ export default defineConfig([
               position: 'before',
             },
             {
-              pattern: '#/**',
+              pattern: '@shadcn/**',
               group: 'external',
               position: 'after',
             },

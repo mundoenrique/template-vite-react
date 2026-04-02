@@ -25,11 +25,11 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
-      "@shadcn/*": ["./chadcn/*"],
+      "@shadcn/*": ["shadcn/*"],
       "@/*": ["./src/*"],
       "@tests/*": ["./__tests__/*"],
       "%/*": ["./public/*"]
     }
   },
-  "include": ["src", "chadcn", "__tests__"]
+  "include": ["src", "shadcn", "__tests__"]
 }

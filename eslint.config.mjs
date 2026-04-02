@@ -9,7 +9,7 @@ import importPlugin from 'eslint-plugin-import';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
-  globalIgnores(['dist', 'coverage', 'chadcn', 'node_modules']),
+  globalIgnores(['dist', 'coverage', 'shadcn', 'node_modules']),
   {
     extends: [js.configs.recommended, tseslint.configs.recommended],
     languageOptions: {
@@ -77,6 +77,11 @@ export default defineConfig([
               pattern: '@/**',
               group: 'internal',
               position: 'before',
+            },
+            {
+              pattern: '%/**',
+              group: 'internal',
+              position: 'after',
             },
             {
               pattern: '@shadcn/**',

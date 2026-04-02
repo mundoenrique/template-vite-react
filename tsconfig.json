@@ -4,7 +4,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@shadcn/*": ["./chadcn/*"],
+      "@shadcn/*": ["shadcn/*"],
       "@/*": ["./src/*"],
       "@tests/*": ["./__tests__/*"],
       "%/*": ["./public/*"]

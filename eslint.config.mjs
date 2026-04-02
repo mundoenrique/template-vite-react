@@ -65,6 +65,7 @@ export default defineConfig([
     rules: {
       curly: ['off', 'all'],
       'no-console': ['error', { allow: ['warn', 'error'] }],
+      '@typescript-eslint/no-deprecated': 'warn',
       '@typescript-eslint/no-floating-promises': 'error',
       '@typescript-eslint/no-misused-promises': 'error',
       '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],
@@ -74,19 +75,24 @@ export default defineConfig([
           groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
           pathGroups: [
             {
-              pattern: '@/**',
-              group: 'internal',
-              position: 'before',
-            },
-            {
               pattern: '%/**',
               group: 'internal',
               position: 'after',
             },
             {
+              pattern: '@/**',
+              group: 'internal',
+              position: 'before',
+            },
+            {
               pattern: '@shadcn/**',
               group: 'external',
               position: 'after',
+            },
+            {
+              pattern: '@tests/**',
+              group: 'parent',
+              position: 'before',
             },
           ],
           pathGroupsExcludedImportTypes: ['builtin', 'object', 'type'],
